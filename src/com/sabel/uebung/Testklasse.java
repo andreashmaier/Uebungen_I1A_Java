@@ -34,6 +34,58 @@ public class Testklasse {
             System.out.println(person2);
         }
 
+        vergleichenVonObjekten();
+
+        Person gesuchtePerson = personenverwaltung.findePerson("Tanja");
+        System.out.println("Gesuchte Person: " + gesuchtePerson);
+
+    }
+
+    public static void vergleichenVonObjekten() {
+        // == vergleicht den Inhalt der beiden Variablen
+        // Primitive Datentypen
+        int zahl1 = 42;
+        int zahl2 = 42;
+        // primitive Datentypen => Wert liegt direkt in Speicherzelle => Wertevergleich
+        if (zahl1 == zahl2) {
+            System.out.println("Wert ist gleich");
+        } else {
+            System.out.println("Wert ist ungleich");
+        }
+
+       // Referentiellen Datentypen
+        Person person1 = new Person("Andreas", 41);
+        Person person2 = new Person("Andreas", 41);
+
+        // Referenzvergleich
+        if (person1 == person2) {
+            System.out.println("Referenzvergleich: gleich");
+        } else {
+            System.out.println("Referenzvergleich: ungleich");
+        }
+
+        // Objektvergleich
+        // Methode equals
+        if (person1.equals(person2)) {
+            System.out.println("Objektvergleich gleich");
+        } else {
+            System.out.println("Objektvergleich false");
+        }
+
+        String str1 = "Hallo";
+        String str2 = new String("Hallo");
+
+        if (str1 == str2) {
+            System.out.println("Referenzvergleich: gleich");
+        } else {
+            System.out.println("Referenzvergleich: ungleich");
+        }
+
+        if (str1.equals(str2)) {
+            System.out.println("Objektvergleich: gleich");
+        } else {
+            System.out.println("Objektvergleich: ungleich");
+        }
 
     }
 }

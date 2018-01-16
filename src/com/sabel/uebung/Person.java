@@ -1,5 +1,7 @@
 package com.sabel.uebung;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     private int alter;
@@ -45,5 +47,20 @@ public class Person {
 
     public String toString() {
         return "Name: " + name + ", Alter: " + alter;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return alter == person.alter &&
+                Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, alter);
     }
 }

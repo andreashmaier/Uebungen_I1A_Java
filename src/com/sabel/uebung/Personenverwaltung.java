@@ -80,4 +80,13 @@ public class Personenverwaltung {
         }
         return personenAelterAls;
     }
+
+    public Person findePerson(String name) {
+        for (Person person : personen) {
+            if (person.getName().equals(name)) {
+                return person;
+            }
+        }
+        return null;
+    }
 }
