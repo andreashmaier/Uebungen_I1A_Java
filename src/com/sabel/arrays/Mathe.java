@@ -26,6 +26,22 @@ public class Mathe {
         druckeArray(quadrat);
         int n = 123;
         System.out.println("Quersumme von " + n + " = " + quersumme(n));
+
+        int[] quersumme = new int[50];
+        for (int i = 0; i < quersumme.length; i++){
+            quersumme[i] = quersumme(i);
+        }
+
+        druckeArray(quersumme);
+        int pos = maxwert(quadrat);
+        System.out.println("Maximalwert Quadrat Position: " + pos + " Wert: " + quadrat[pos]);
+        pos = maxwert(quersumme);
+        System.out.println("Maximalwert Quersumme Position: " + pos + " Wert: " + quersumme[pos]);
+
+        System.out.println("Mittelwert Quadrat: " + mittelwert(quadrat));
+        System.out.println("Mittelwert Quersumme: " + mittelwert(quersumme));
+
+
     }
 
     public static void druckeArray(int[] a) {
@@ -46,5 +62,30 @@ public class Mathe {
             n = n / 10;
         }
         return quersumme;
+    }
+
+    public static int summe(int[] array){
+        int summe = 0;
+        for (int i = 0; i < array.length; i++) {
+            summe += array[i];
+        }
+        return summe;
+    }
+
+    public static double mittelwert(int[] array){
+        int summe = summe(array);
+        return (double)summe / array.length;
+    }
+
+    public static int maxwert (int[] array){
+        int max = array[0];
+        int position = 0;
+        for (int i = 1; i < array.length; i++) {
+            if(array[i] > max){
+                max = array[i];
+                position = i;
+            }
+        }
+        return position;
     }
 }
