@@ -3,7 +3,7 @@ package com.sabel.uebung.temperaturmessung;
 public class Fibonacci {
     public static void main(String[] args) {
         System.out.println(anzahlPaare(10));
-        int[] fibonacci = lieferFibonacci(30);
+        int[] fibonacci = lieferFibonacci(44);
         for (int anzahlPaare : fibonacci) {
             System.out.println(anzahlPaare);
         }
