@@ -1,5 +1,6 @@
 package com.sabel.abzaehlreim;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Abzaehlreim {
@@ -31,5 +32,9 @@ public class Abzaehlreim {
             next[finger] = next[next[finger]];
         }
         System.out.println("Gewonnen hat Kind: " + finger);
+        Arrays.binarySearch(next, 42);
+
     }
+
+
 }
