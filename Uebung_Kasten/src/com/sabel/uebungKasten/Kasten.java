@@ -1,6 +1,7 @@
 package com.sabel.uebungKasten;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Kasten {
     private ArrayList<Flasche> flaschen;
@@ -54,5 +55,18 @@ public class Kasten {
             }
         }
         return neueListe;
+    }
+
+    public ArrayList<Flasche> entnehmeAlleFlaschenMit(String getraenk) {
+        ArrayList<Flasche> entnommeneFlaschen = new ArrayList<>();
+        Iterator<Flasche> iterator = flaschen.iterator();
+        while (iterator.hasNext()) {
+            Flasche flasche = iterator.next();
+            if (flasche.getGetraenk().equals(getraenk)) {
+                entnommeneFlaschen.add(flasche);
+                iterator.remove();
+            }
+        }
+        return entnommeneFlaschen;
     }
 }
