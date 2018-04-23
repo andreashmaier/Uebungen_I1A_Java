@@ -44,7 +44,7 @@ public class Kundendienstsystem {
             if (("ade".equals(eingabe))) {
                 fertig = true;
             } else {
-                String antwort = beantworter.generiereAntwort();
+                String antwort = beantworter.generiereAntwort(eingabe);
                 System.out.println(antwort);
             }
         }

@@ -1,6 +1,7 @@
 package de.gbsschulen.technischerKundendienst;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -14,6 +15,7 @@ public class Beantworter {
 
     private Random random;
     private ArrayList<String> standardAntworten;
+    private HashMap<String, String> antworten;
 
     /**
      * Erzeuge einen de.gbsschulen.technischerKundendienst.Beantworter -
@@ -23,6 +25,14 @@ public class Beantworter {
         this.random = new Random();
         this.standardAntworten = new ArrayList<>();
         this.standardAntwortenBefuellen();
+        this.antworten = new HashMap<>();
+        this.antwortMapBefuellen();
+    }
+
+    private void antwortMapBefuellen() {
+        this.antworten.put("linux", "Linux ist ein quelloffenes Betriebssystem. Bei Problemen wenden Sie sich bitte an Linux Tolvards");
+        this.antworten.put("windows", "Windows ist ein Betriebssystem der Firma Microsoft. Dafür können wir leider keinen Support liefern");
+        this.antworten.put("mac os", "Fragen Sie Steve Jobs!");
     }
 
     private void standardAntwortenBefuellen() {
@@ -41,8 +51,11 @@ public class Beantworter {
      *
      * @return Einen String, der die Antwort enthält.
      */
-    public String generiereAntwort() {
+    public String generiereAntwort(String eingabe) {
+        String antwort = this.antworten.get(eingabe);
+        if (antwort != null) {
+            return antwort;
+        }
         return this.standardAntworten.get(random.nextInt(standardAntworten.size()));
     }
-
 }
