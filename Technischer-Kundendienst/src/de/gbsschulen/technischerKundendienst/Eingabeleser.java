@@ -43,8 +43,8 @@ public class Eingabeleser {
 
     public static void main(String[] args) {
         Eingabeleser eingabeleser = new Eingabeleser();
-        String eingabe = eingabeleser.gibEingabe();
-        System.out.println(eingabe);
+//        String eingabe = eingabeleser.gibEingabe();
+//        System.out.println(eingabe);
     }
 
 }
