@@ -1,5 +1,7 @@
 package de.gbsschulen.vererbung;
 
+import java.util.Objects;
+
 public class Tier {
     private String name;
     private int alter;
@@ -27,5 +29,24 @@ public class Tier {
 
     public void fressen() {
         System.out.println("Das Tier frisst!");
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Alter: " + alter;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tier tier = (Tier) o;
+        return Objects.equals(name, tier.name);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name);
     }
 }

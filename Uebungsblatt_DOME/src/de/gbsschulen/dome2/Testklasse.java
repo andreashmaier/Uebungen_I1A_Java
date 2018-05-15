@@ -10,6 +10,8 @@ public class Testklasse {
         db.erfasseMedium(new CD ("Dire Straits", "Dire Straits", 42, 9));
         db.erfasseMedium(new DVD ("Das Leben des Brian", "Terry Jones", 90));
         db.erfasseMedium(new DVD ("Rocky", "John G.", 114));
+        // Objektdiagramm
 
+        db.auflisten();
     }
 }

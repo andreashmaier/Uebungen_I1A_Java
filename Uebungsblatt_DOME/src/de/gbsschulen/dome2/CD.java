@@ -18,4 +18,12 @@ public class CD extends Medium{
     public int gibTitelanzahl() {
         return titelanzahl;
     }
+
+    @Override
+    public void ausgeben() {
+        super.ausgeben();
+        System.out.println("Künstler: " + this.kuenstler);
+        System.out.println("Titelanzahl: " + this.titelanzahl);
+
+    }
 }
